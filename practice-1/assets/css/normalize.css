@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input{
+    border: 1px solid #D6DADE;
+    width: 362px;
+    height: 56px;
+    flex-shrink: 0;
+    margin-bottom: 32px;
+}

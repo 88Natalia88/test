@@ -1,0 +1,68 @@
+.button {
+  width: 100%;
+  max-width: 1110px;
+  margin: 15% auto;
+  text-align: center;
+}
+.button__main {
+  width: 557px;
+  height: 48px;
+  flex-shrink: 0;
+  background-color: #E5266E;
+  color: white;
+  border: none;
+}
+.button__main:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #E5266E;
+  border: #E5266E 1px solid;
+}
+
+.modal {
+  border: 2px solid red;
+  width: 754px;
+  height: 1248px;
+  border-radius: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+.modal__title h2 {
+  color: #0C1014;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 34px;
+}
+.modal__form {
+  margin-top: 35px;
+}
+
+.form {
+  margin-left: 98px;
+  margin-right: 98px;
+}
+.form__firstPath {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 26px;
+}
+.form__info {
+  display: flex;
+  flex-direction: column;
+}
+.form__img input {
+  border-radius: 163.333px;
+  width: 163.333px;
+  height: 163.333px;
+  flex-shrink: 0;
+}
+.form__img input[type=file] {
+  background-image: url(../img/backgroundPhoto.svg);
+  background-size: cover;
+  /*text-indent: 59px;*/
+  /*background-color: transparent;*/
+  border: none;
+}/*# sourceMappingURL=style.css.map */
