@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <title>practice-1</title>
 </head>
 <body>
@@ -19,12 +22,51 @@
             <div class="form">
                 <div class="form__firstPath">
                     <div class="form__info">
-                        <input type="text" id="text" name="text" placeholder="Название организации">
-                        <input type="tel" id="tel" name="tel" placeholder="Телефон">
-                        <input type="email" id="email" name="email" placeholder="E-mail">
+                        <div class="form__info-input">
+                            <div class="form__error"></div>
+                            <input type="text" id="text" name="text" placeholder="Название организации" required>
+                        </div>
+                        <div class="form__info-input">
+                            <div class="form__error"></div>
+                            <input type="tel" id="tel" name="tel" placeholder="Телефон" pattern="^\+7[1-9]{10}$" required>
+                        </div>
+                        <div class="form__info-input">
+                            <div class="form__error"></div>
+                            <input type="email" id="email" name="email" placeholder="E-mail">
+                        </div>
                     </div>
                     <div class="form__img">
+                        <div class="form__error"></div>
                         <input type="file" id="img" name="photo" accept="jpeg, png">
+                    </div>
+                </div>
+                <div class="form__secondPath">
+                    <div class="form__select">
+                        <select id="select">
+                            <option class="first-option" value="" selected disabled hidden>Направление</option>
+                            <option value="Экология">Экология</option>
+                            <option value="It">It</option>
+                            <option value="менеджмент">Менеджмент</option>
+                            <option value="производство">производство</option>
+                        </select>
+                    </div>
+                    <div class="form__social">
+                            <input type="text" name="ru" id="ru" placeholder="avc.ru">
+                            <input type="text" placeholder="vk.com" name="vk" id="vk">
+                            <input type="text" placeholder="ok.com" name="ok" id="ok">
+                            <input type="text" placeholder="facebook.com" name="facebook" id="facebook">
+                            <input type="text" placeholder="instagram.com" name="instagram" id="instagram">
+                            <input type="text" placeholder="youtube.com" name="youtube" id="youtube">
+                            <input type="text" placeholder="Руководитель" id="boss" name="boss">
+                    </div>
+                    <div class="error"></div>
+                </div>
+                <div class="form__button">
+                    <div class="form__button-yes">
+                        <button class="button__main" id="button-yes">Стать партнером проекта</button>
+                    </div>
+                    <div class="form__button-no">
+                        <button class="button-no">Отменить</button>
                     </div>
                 </div>
             </div>

@@ -25,11 +25,12 @@
   height: 1248px;
   border-radius: 12px;
   margin: 0 auto;
-  text-align: center;
 }
 .modal__title h2 {
+  margin-left: 98px;
+  margin-top: 53px;
   color: #0C1014;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 28px;
   font-style: normal;
   font-weight: 800;
@@ -53,6 +54,21 @@
   display: flex;
   flex-direction: column;
 }
+.form__info-input {
+  border: 1px solid #D6DADE;
+  width: 362px;
+  height: 56px;
+  margin-bottom: 32px;
+}
+.form__error {
+  margin: 7px auto auto 16px;
+}
+.form__social-input input[type=text] {
+  border: 1px solid #D6DADE;
+  margin-bottom: 32px;
+  width: 558px;
+  height: 56px;
+}
 .form__img input {
   border-radius: 163.333px;
   width: 163.333px;
@@ -65,4 +81,43 @@
   /*text-indent: 59px;*/
   /*background-color: transparent;*/
   border: none;
+}
+.form__button-yes {
+  margin-bottom: 15px;
+  margin-top: 18px;
+}
+.form__button-no {
+  text-align: center;
+}
+
+.button-no {
+  color: #0848C0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#vk {
+  background: url(../img/vk\ 1.svg) no-repeat 98%;
+  background-size: 20px;
+}
+
+#ru {
+  background: url(../img/global\ 1.svg) no-repeat 98%;
+}
+
+#ok {
+  background: url(../img/odnoklassniki\ 3.svg) no-repeat 98%;
+}
+
+#facebook {
+  background: url(../img/facebook.svg) no-repeat 98%;
+}
+
+#youtube {
+  background: url(../img/youtube\ 2.svg) no-repeat 98%;
+}
+
+#instagram {
+  background: url(../img/Instagram.svg) no-repeat 98%;
 }/*# sourceMappingURL=style.css.map */
