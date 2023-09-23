@@ -7,14 +7,3 @@ input:focus, select:focus {
     outline: none;
     border: none;
 }
-input{
-    padding-left: 16px;
-    border: none;
-    width: 360px;
-}
-select{
-    padding-left: 16px;
-    padding-top: 5px;
-    border: none;
-    width: 550px;
-}
