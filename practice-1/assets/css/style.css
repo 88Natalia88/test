@@ -20,15 +20,17 @@
 }
 
 .modal {
-  border: 2px solid red;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: 754px;
   height: 1248px;
   border-radius: 12px;
-  margin: 0 auto;
+  margin: 130px auto;
+  background-color: #FFF;
 }
 .modal__title h2 {
   margin-left: 98px;
-  margin-top: 53px;
+  padding-top: 53px;
   color: #0C1014;
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
@@ -38,6 +40,11 @@
 }
 .modal__form {
   margin-top: 35px;
+}
+
+.main-page {
+  width: 100%;
+  height: 100%;
 }
 
 .form {
@@ -73,14 +80,62 @@
   border-radius: 163.333px;
   width: 163.333px;
   height: 163.333px;
-  flex-shrink: 0;
 }
-.form__img input[type=file] {
+.form__img {
+  position: relative;
+}
+.form__img-input::before {
+  content: "";
+  position: absolute;
+  top: 23%;
+  left: 35%;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/Vector.svg);
+  background-size: cover;
+}
+.form__img-input {
+  position: relative;
   background-image: url(../img/backgroundPhoto.svg);
   background-size: cover;
-  /*text-indent: 59px;*/
-  /*background-color: transparent;*/
+  border-radius: 163.333px;
+  width: 163.333px;
+  height: 163.333px;
   border: none;
+}
+.form__img-close::before {
+  content: "";
+  position: absolute;
+  top: 3%;
+  right: 8%;
+  width: 36px;
+  height: 36px;
+  background-image: url(../img/close.svg);
+  background-size: cover;
+  cursor: pointer;
+}
+.form__img-input input[type=file] {
+  opacity: 0;
+}
+.form__img-castomBtn {
+  position: absolute;
+  top: 50%;
+  right: 22%;
+  color: #FFF;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18.667px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+.form__select {
+  border: 1px solid #D6DADE;
+  width: 558px;
+  height: 56px;
+  margin-bottom: 32px;
 }
 .form__button-yes {
   margin-bottom: 15px;

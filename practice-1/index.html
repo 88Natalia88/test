@@ -6,72 +6,83 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=PT+Sans&display=swap" rel="stylesheet">
     <title>practice-1</title>
 </head>
 <body>
-    <div class="button">
-        <button class="button__main" id="btn-main">Стать партнером</button>
-    </div>
-    <div class="modal">
-        <div class="modal__title">
-            <h2>Стать партнёром проекта</h2>
+    <div class="main-page">
+        <div class="button">
+            <button class="button__main" id="btn-main">Стать партнером</button>
         </div>
-        <form class="modal__form">
-            <div class="form">
-                <div class="form__firstPath">
-                    <div class="form__info">
-                        <div class="form__info-input">
-                            <div class="form__error"></div>
-                            <input type="text" id="text" name="text" placeholder="Название организации" required>
-                        </div>
-                        <div class="form__info-input">
-                            <div class="form__error"></div>
-                            <input type="tel" id="tel" name="tel" placeholder="Телефон" pattern="^\+7[1-9]{10}$" required>
-                        </div>
-                        <div class="form__info-input">
-                            <div class="form__error"></div>
-                            <input type="email" id="email" name="email" placeholder="E-mail">
-                        </div>
-                    </div>
-                    <div class="form__img">
-                        <div class="form__error"></div>
-                        <input type="file" id="img" name="photo" accept="jpeg, png">
-                    </div>
+        <div class="modal">
+            <div class="modal__popup">
+                <div class="modal__title">
+                    <h2>Стать партнёром проекта</h2>
                 </div>
-                <div class="form__secondPath">
-                    <div class="form__select">
-                        <select id="select">
-                            <option class="first-option" value="" selected disabled hidden>Направление</option>
-                            <option value="Экология">Экология</option>
-                            <option value="It">It</option>
-                            <option value="менеджмент">Менеджмент</option>
-                            <option value="производство">производство</option>
-                        </select>
+                <form class="modal__form">
+                    <div class="form">
+                        <div class="form__firstPath">
+                            <div class="form__info">
+                                <div class="form__info-input">
+                                    <div class="form__error"></div>
+                                    <input type="text" id="text" name="text" placeholder="Название организации" required>
+                                </div>
+                                <div class="form__info-input">
+                                    <div class="form__error"></div>
+                                    <input type="tel" id="tel" name="tel" placeholder="Телефон" pattern="^\+7[1-9]{10}$" required>
+                                </div>
+                                <div class="form__info-input">
+                                    <div class="form__error"></div>
+                                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                                </div>
+                            </div>
+                            <div class="form__img">
+                                <div class="form__error"></div>
+                                <div class="form__img-input">
+                                    <button class="form__img-close" id="close"></button>
+                                    <input type="file" id="img" name="photo" accept="jpeg, png" required>
+                                    <label for="photo" class="form__img-castomBtn">Выберите<br> файл</label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form__secondPath">
+                            <div class="form__select">
+                                <div class="form__error"></div>
+                                <select id="select">
+                                    <option class="first-option" value="" selected disabled hidden>Направление</option>
+                                    <option value="Экология">Экология</option>
+                                    <option value="It">It</option>
+                                    <option value="менеджмент">Менеджмент</option>
+                                    <option value="производство">производство</option>
+                                </select>
+                            </div>
+                            <div class="form__social">
+                                    <input type="text" name="ru" id="ru" placeholder="avc.ru">
+                                    <input type="text" placeholder="vk.com" name="vk" id="vk">
+                                    <input type="text" placeholder="ok.com" name="ok" id="ok">
+                                    <input type="text" placeholder="facebook.com" name="facebook" id="facebook">
+                                    <input type="text" placeholder="instagram.com" name="instagram" id="instagram">
+                                    <input type="text" placeholder="youtube.com" name="youtube" id="youtube">
+                                    <input type="text" placeholder="Руководитель" id="boss" name="boss">
+                            </div>
+                        </div>
+                        <div class="form__button">
+                            <div class="form__button-yes">
+                                <button class="button__main" id="button-yes">Стать партнером проекта</button>
+                            </div>
+                            <div class="form__button-no">
+                                <button class="button-no">Отменить</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form__social">
-                            <input type="text" name="ru" id="ru" placeholder="avc.ru">
-                            <input type="text" placeholder="vk.com" name="vk" id="vk">
-                            <input type="text" placeholder="ok.com" name="ok" id="ok">
-                            <input type="text" placeholder="facebook.com" name="facebook" id="facebook">
-                            <input type="text" placeholder="instagram.com" name="instagram" id="instagram">
-                            <input type="text" placeholder="youtube.com" name="youtube" id="youtube">
-                            <input type="text" placeholder="Руководитель" id="boss" name="boss">
-                    </div>
-                    <div class="error"></div>
-                </div>
-                <div class="form__button">
-                    <div class="form__button-yes">
-                        <button class="button__main" id="button-yes">Стать партнером проекта</button>
-                    </div>
-                    <div class="form__button-no">
-                        <button class="button-no">Отменить</button>
-                    </div>
-                </div>
+                </form>
             </div>
-        </form>
+    
+        </div>
     </div>
+
     <script src="assets/js/index.js"></script>
 </body>
 </html>

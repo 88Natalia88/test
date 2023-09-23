@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-input:focus {
+input:focus, select:focus {
     outline: none;
     border: none;
 }
@@ -14,10 +14,9 @@ input{
 }
 select{
     padding-left: 16px;
-    border: 1px solid #D6DADE;
-    width: 558px;
-    height: 56px;  
-    margin-bottom: 32px;
+    padding-top: 5px;
+    border: none;
+    width: 550px;
 }
 .form__social input[type="text"]{
     width: 558px;
