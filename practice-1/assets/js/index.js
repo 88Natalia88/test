@@ -52,6 +52,7 @@ function submitForm(){
     let youtubeAdd = youtube.value;
     let bossAdd = boss.value;
     let selectFormAdd = selectForm.value;
+    let formValid = true;
 
 errors.forEach((error, i) => {
     error.innerHTML = '';
@@ -126,6 +127,27 @@ errors.forEach((error, i) => {
     if(bossAdd === '' && i === 11){
         error.innerHTML = "* Введите ФИО руководителя";
     }
+
+    if (error.innerHTML !== '') {
+        formValid = false;
+    }
+
 })
+
+if (formValid) {
+    // Очистить все инпуты и отправка данных формы
+    text.value = '';
+    tel.value = '';
+    email.value = '';
+    img.value = '';
+    ru.value = '';
+    vk.value = '';
+    ok.value = '';
+    instagram.value = '';
+    facebook.value = '';
+    youtube.value = '';
+    boss.value = '';
+    selectForm.value = '';
+}
 
 }
