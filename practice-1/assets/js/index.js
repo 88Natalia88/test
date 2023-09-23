@@ -59,21 +59,22 @@ errors.forEach((error, i) => {
     if(textAdd === '' && i === 0){
         error.innerHTML = "* Введите наименование организации";
     }
-    let regTel = /^\+?\d{1,}\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{2}[\s.-]?\d{2}$/;
+
+    let regTel = /^\+?\d{1,}\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{2}[\s.-]?\d{2}$/; //регулярное выражение для корректного номера телефона
     if(telAdd === '' && i === 1){
         error.innerHTML = "* Введите номер телефона";
     } else if (telAdd !== '' && i === 1 && !regTel.test(telAdd)) {
         error.innerHTML = "* Введите корректный номер телефона";
     }
 
-    let regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //регулярное выражение для проверки корректного email
     if(emailAdd === '' && i === 2){
         error.innerHTML = "* Введите ваш E-mail";
     } else if (emailAdd !== '' && i === 2 && !regEmail.test(emailAdd)){
         error.innerHTML = "* Введите корректный e-mail";
     }
 
-    let regPhoto = /\.(jpeg|jpg|png)$/i;
+    let regPhoto = /\.(jpeg|jpg|png)$/i; //регулярное выражение для проверки формата добавленного фото
     if(imgAdd === '' && i === 3){
         error.innerHTML = "* Логотип (jpeg, png)";
     } else if (imgAdd !== '' && i === 3 && !regPhoto.test(imgAdd)){
@@ -83,10 +84,48 @@ errors.forEach((error, i) => {
     if(selectFormAdd === '' && i === 4){
         error.innerHTML = "* Выберите направление";
     }
+
+    let regUrl = /^(http|https):\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //регулярное выражение для корректного ввода сайта
+    if(ruAdd === '' && i === 5){
+        error.innerHTML = "* Введите ссылку";
+    } else if (ruAdd !== '' && i === 5 && !regUrl.test(ruAdd)){
+        error.innerHTML = "* Введите корректную ссылку";
+    }
+
+    let regSocial = /(vk\.com|ok\.ru|facebook\.com|instagram\.com|youtube\.com)/i; //регулярное выражение для корректного ввода социальных сетей
+    if(vkAdd === '' && i === 6){
+        error.innerHTML = "* Введите ссылку";
+    } else if (vkAdd !== '' && i === 6 && !regSocial.test(vkAdd)){
+        error.innerHTML = "* Введите корректную ссылку";
+    }
+
+    if(okAdd === '' && i === 7){
+        error.innerHTML = "* Введите ссылку";
+    } else if (okAdd !== '' && i === 7 && !regSocial.test(okAdd)){
+        error.innerHTML = "* Введите корректную ссылку";
+    }
+
+    if(instagramAdd === '' && i === 8){
+        error.innerHTML = "* Введите ссылку";
+    } else if (instagramAdd !== '' && i === 8 && !regSocial.test(instagramAdd)){
+        error.innerHTML = "* Введите корректную ссылку";
+    }
+
+    if(facebookAdd === '' && i === 9){
+        error.innerHTML = "* Введите ссылку";
+    } else if (facebookAdd !== '' && i === 9 && !regSocial.test(facebookAdd)){
+        error.innerHTML = "* Введите корректную ссылку";
+    }
+
+    if(youtubeAdd === '' && i === 10){
+        error.innerHTML = "* Введите ссылку";
+    } else if (youtubeAdd !== '' && i === 10 && !regSocial.test(youtubeAdd)){
+        error.innerHTML = "* Введите корректную ссылку";
+    }
+
+    if(bossAdd === '' && i === 11){
+        error.innerHTML = "* Введите ФИО руководителя";
+    }
 })
 
-
-    console.log(textAdd)
-    let item = sel.options;
-    console.log(item)
 }

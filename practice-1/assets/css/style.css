@@ -66,11 +66,15 @@
   margin: 7px auto auto 16px;
   color: red;
 }
-.form__social-input input[type=text] {
+.form__social-input {
   border: 1px solid #D6DADE;
   margin-bottom: 32px;
   width: 558px;
   height: 56px;
+}
+.form__social-input input[type=text] {
+  height: 22px;
+  width: 555px;
 }
 .form__img input {
   border-radius: 163.333px;
@@ -155,20 +159,25 @@
 
 #ru {
   background: url(../img/global\ 1.svg) no-repeat 98%;
+  background-size: 20px;
 }
 
 #ok {
   background: url(../img/odnoklassniki\ 3.svg) no-repeat 98%;
+  background-size: 20px;
 }
 
 #facebook {
   background: url(../img/facebook.svg) no-repeat 98%;
+  background-size: 20px;
 }
 
 #youtube {
   background: url(../img/youtube\ 2.svg) no-repeat 98%;
+  background-size: 20px;
 }
 
 #instagram {
   background: url(../img/Instagram.svg) no-repeat 98%;
+  background-size: 20px;
 }/*# sourceMappingURL=style.css.map */

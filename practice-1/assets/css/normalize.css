@@ -18,9 +18,3 @@ select{
     border: none;
     width: 550px;
 }
-.form__social input[type="text"]{
-    width: 558px;
-    height: 56px; 
-    border: 1px solid #D6DADE;
-    margin-bottom: 32px;
-}
