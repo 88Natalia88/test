@@ -18,7 +18,6 @@ th{
 .form-search{
     display: flex;
     justify-content: end;
-    margin-right: 60px;
 }
 .form-search input[type='search']{
     width: 300px;
@@ -38,7 +37,4 @@ th{
     -moz-border-radius: 0 8px 8px 0;
     -ms-border-radius: 0 8px 8px 0;
     -o-border-radius: 0 8px 8px 0;
-}
-.hide{
-    display: none;
 }
