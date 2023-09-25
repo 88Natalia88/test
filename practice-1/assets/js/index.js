@@ -54,12 +54,46 @@ btnNo.addEventListener("click", function(){
         error.innerHTML = '';
     });
 });
+
+tel.addEventListener('focus', addMaskNumber);
+
+function addMaskNumber() {
+    tel.placeholder = '+_(___);___-__-__';
+
+    tel.addEventListener('input', () => {
+        const phone = tel.value.replace(/\D/g, '');
+        let formattedPhone = '';
+        
+        if (phone.length > 0) {
+            formattedPhone += '+' + phone.substring(0, 1) + '(';
+        }
+
+        if (phone.length > 1) {
+            formattedPhone += phone.substring(1, 4);
+        }
+        
+        if (phone.length > 4) {
+            formattedPhone += ')' + phone.substring(4, 7);
+        }
+
+        if (phone.length > 7) {
+            formattedPhone += '-' + phone.substring(7, 9);
+        }
+        
+        if (phone.length > 9) {
+            formattedPhone += '-' + phone.substring(9, 11);
+        }
+
+        tel.value = formattedPhone;
+    });
+}
 //валидация
 
 btnYes.addEventListener("click", submitForm);
 
 
 function submitForm(e){
+
     e.preventDefault();
     //данные введенные в инпутах
     let textAdd = text.value;
