@@ -5,7 +5,7 @@ function createTable(){
     .then(response => response.json())
     .then(data => {
         data.forEach((element) => {
-            console.log(element)
+            //console.log(element)
             let row = document.createElement('tr');
             row.className = 'tableRow';
             row.innerHTML += `<tbody>
