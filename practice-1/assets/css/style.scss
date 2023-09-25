@@ -2,18 +2,31 @@ input{
     padding-left: 16px;
     border: none;
     width: 360px;
+    color: #0C1014;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
 }
 select{
     padding-left: 16px;
     padding-top: 5px;
     border: none;
     width: 550px;
+    color: #0C1014;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
 }
 .button{
     width: 100%;
     max-width: 1110px;
     margin: 15% auto;
     text-align: center;
+
     &__main{
         width: 557px;
         height: 48px;
@@ -21,7 +34,18 @@ select{
         background-color: #E5266E;
         color: white;
         border: none;
-    }
+        text-align: center;
+        font-family: 'Lato',sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
     &__main:hover{
         cursor: pointer;
         background-color: white;
@@ -66,24 +90,30 @@ select{
         flex-direction: column;
     }
     &__info-input{
+        border-radius: 5px;
         border: 1px solid #D6DADE;
         width: 362px;
         height: 56px;
         margin-bottom: 32px;
-    }
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
     &__error{
         margin: 7px auto auto 16px;
         color: red;
     }
-    &__social-input{
+    &__social input[type="text"]{
         border: 1px solid #D6DADE;
         margin-bottom: 32px;
         width: 558px;
         height: 56px;
-    }
-    &__social-input input[type="text"]{
-        height: 22px;
-        width: 555px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
     }
     &__img input{
         border-radius: 163.333px;
@@ -143,9 +173,14 @@ select{
     &__select{
         border: 1px solid #D6DADE;
         width: 558px;
-        height: 56px;  
+        height: 56px;
         margin-bottom: 32px;
-    }
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
     &__button-yes{
         margin-bottom: 15px;
         margin-top: 18px;
@@ -156,6 +191,11 @@ select{
 }
 .button-no{
     color: #0848C0;
+    font-family: 'PT Sans',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -212,15 +252,10 @@ select{
             margin-bottom: 25px;
         }
 
-        &__social-input{
+        &__social input[type="text"]{
             width: 362px;
             margin-bottom: 25px;
         }
-
-        &__social-input input[type="text"]{
-            width: 358px;
-        }
-
         &__select{
             width: 362px;
             margin-bottom: 25px;
@@ -256,13 +291,9 @@ select{
             margin-bottom: 15px;
         }
 
-        &__social-input{
+        &__social input[type="text"]{
             width: 340px;
             margin-bottom: 15px;
-        }
-
-        &__social-input input[type="text"]{
-            width: 330px;
         }
 
         &__select{
@@ -301,12 +332,8 @@ select{
         margin-left: 5px;
         margin-right: 5px;
 
-        &__social-input{
+        &__social input[type="text"]{
             width: 290px;
-        }
-
-        &__social-input input[type="text"]{
-            width: 280px;
         }
 
         &__select{
