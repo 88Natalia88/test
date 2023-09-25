@@ -173,6 +173,9 @@ select {
   text-decoration-line: underline;
   cursor: pointer;
 }
+.form__img-preview {
+  display: none;
+}
 .form__select {
   border: 1px solid #D6DADE;
   width: 558px;

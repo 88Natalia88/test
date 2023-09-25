@@ -170,6 +170,9 @@ select{
         text-decoration-line: underline;
         cursor: pointer;
     }
+    &__img-preview{
+        display: none;
+    }
     &__select{
         border: 1px solid #D6DADE;
         width: 558px;

@@ -55,23 +55,25 @@ btnNo.addEventListener("click", function(){
     });
 });
 
+//добавление маскированного ввода телефона
 tel.addEventListener('focus', addMaskNumber);
 
 function addMaskNumber() {
-    tel.placeholder = '+_(___);___-__-__';
+    tel.placeholder = '+7 (___) ___-__-__';
 
     tel.addEventListener('input', () => {
         const phone = tel.value.replace(/\D/g, '');
         let formattedPhone = '';
         
+        
         if (phone.length > 0) {
             formattedPhone += '+' + phone.substring(0, 1) + '(';
         }
-
+    
         if (phone.length > 1) {
             formattedPhone += phone.substring(1, 4);
         }
-        
+
         if (phone.length > 4) {
             formattedPhone += ')' + phone.substring(4, 7);
         }
@@ -87,6 +89,7 @@ function addMaskNumber() {
         tel.value = formattedPhone;
     });
 }
+
 //валидация
 
 btnYes.addEventListener("click", submitForm);
