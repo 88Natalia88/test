@@ -72,7 +72,6 @@ btnNo.addEventListener("click", function(){
     text.value = '';
     tel.value = '';
     email.value = '';
-    img.value = '';
     ru.value = '';
     vk.value = '';
     ok.value = '';
@@ -86,6 +85,12 @@ btnNo.addEventListener("click", function(){
     errors.forEach((error) => {
         error.innerHTML = '';
     });
+    if(imgPreview){
+        imgPreview.src = '';
+        imgInput.style.display = "block";
+        img.value = '';
+        imgPreview.style.display = 'none';
+    }
 });
 
 //добавление маскированного ввода телефона
