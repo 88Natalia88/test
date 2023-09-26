@@ -148,13 +148,14 @@ select {
 .form__img-close::before {
   content: "";
   position: absolute;
-  top: 3%;
+  top: 12%;
   right: 8%;
   width: 36px;
   height: 36px;
   background-image: url(../img/close.svg);
   background-size: cover;
   cursor: pointer;
+  z-index: 1;
 }
 .form__img-input input[type=file] {
   opacity: 0;
@@ -174,6 +175,11 @@ select {
   cursor: pointer;
 }
 .form__img-preview {
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 163.333px;
+  width: 163.333px;
+  height: 163.333px;
   display: none;
 }
 .form__select {
@@ -273,6 +279,10 @@ select {
   .form__info-input {
     margin-bottom: 25px;
   }
+  .form__img-close::before {
+    top: 17%;
+    right: 56%;
+  }
   select {
     width: 358px;
   }
@@ -310,6 +320,9 @@ select {
     margin-bottom: 15px;
     width: 340px;
   }
+  .form__img-close::before {
+    right: 53%;
+  }
   select {
     width: 330px;
   }
@@ -344,6 +357,9 @@ select {
   }
   .form__info-input {
     width: 290px;
+  }
+  .form__img-close::before {
+    right: 45%;
   }
   select {
     width: 270px;

@@ -39,15 +39,15 @@
                             </div>
                             <div class="form__img">
                                 <div class="form__error"></div>
-                                <div class="form__img-input">
+                                <div class="img1">
                                     <button class="form__img-close" id="close"></button>
-                                    <input type="file" id="img" name="photo" accept="jpeg, png" required>
-                                    <label for="photo" class="form__img-castomBtn">Выберите<br> файл</label>
+                                    <div class="form__img-input">
+                                        
+                                            <input type="file" id="img" name="photo" accept="jpeg, png" required>
+                                            <label for="photo" class="form__img-castomBtn">Выберите<br> файл</label>
+                                    </div>
                                 </div>
-                                <div class="form__img-preview">
-                                    <button id="preview-btn">&#10008;</button>
-                                    <img src="" alt="Preview" id="img-preview">
-                                </div>
+                                <img src="" alt="" id="form__img-preview" class="form__img-preview">
                             </div>     
                         </div>
                         <div class="form__secondPath">
@@ -80,11 +80,11 @@
                         </div>
                     </div>
                 </form>
+                <img src="" alt="" id="form__img-preview">
             </div>
     
         </div>
     </div>
-
     <script src="assets/js/index.js"></script>
 </body>
 </html>

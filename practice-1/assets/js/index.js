@@ -13,11 +13,44 @@ const youtube = document.getElementById('youtube');
 const boss= document.getElementById('boss');
 const selectForm = document.getElementById('select');
 const btnYes = document.getElementById("button-yes");
+const imgPreview = document.getElementById('form__img-preview');
+const imgInput = document.querySelector('.form__img-input');
+const closeBtn = document.getElementById('close');
 
 //кастомную кнопку "выберите файл" связываем с input type="file"
 document.querySelector(".form__img-castomBtn").addEventListener("click", function(){
-    document.querySelector("input[type='file']").click();
+    img.click();
 });
+
+//добавляем на инпут обработчик изменения
+img.onchange = function(){
+    //console.log(img)
+    getImageData();
+}
+
+//функциия загрузки файла
+function getImageData(){
+    let files = img.files[0];
+    console.log(files)
+    if(files){
+        let fileReader = new FileReader();
+        fileReader.readAsDataURL(files);
+        fileReader.onload = function(){
+            imgPreview.src = this.result;
+            imgInput.style.display = "none";
+            imgPreview.style.display = 'block';
+        }
+    }
+}
+
+//удаление фото
+closeBtn.addEventListener('click', () => {
+    imgPreview.src = '';
+    imgInput.style.display = "block";
+    img.value = '';
+    imgPreview.style.display = 'none';
+
+})
 
 //откраваем модальное окно
 const modal = document.querySelector(".modal");
