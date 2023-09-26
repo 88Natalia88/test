@@ -20,10 +20,8 @@ function createTable(){
 createTable();
 //поисковая строка
 const search = document.querySelector('#search');
-const searchBtn = document.querySelector('#search-btn');
 
-
-searchBtn.addEventListener("click", searchText);
+search.addEventListener("input", searchText);
 //поиск по таблице
 function searchText(e){
     e.preventDefault();
@@ -47,7 +45,6 @@ function searchText(e){
             row.style.display = "table-row";
         });
     }
-    search.value = '';
 }
 //сортировка
 const tableHeaders = document.querySelectorAll('th');
