@@ -123,8 +123,14 @@ function addMaskNumber() {
         if (phone.length > 9) {
             formattedPhone += '-' + phone.substring(9, 11);
         }
-
         tel.value = formattedPhone;
+    });
+
+    tel.addEventListener('keyup', (event) => {
+        const phoneAdd = tel.value;
+        if (phoneAdd === '+7(' && event.key === 'Backspace') {
+            tel.value = '';
+        }
     });
 }
 
