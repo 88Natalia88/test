@@ -3,88 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=PT+Sans&display=swap" rel="stylesheet">
     <title>practice-1</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <div class="main-page">
+    <main class="main">
         <div class="button">
-            <button class="button__main" id="btn-main">Стать партнером</button>
+            <button class="button__first-page button-main" id="btn-main">Написать</button>
+        </div>
+        <div class="flags">
+            <p class="flags__text">Публичные выступления</p>
+            <div class="flags__items">
+                <div class="flags__item">Можно с детьми</div>
+                <div class="flags__item">Для людей с инвалидностью</div>
+                <div class="flags__item">Для людей с инвалидностью</div>
+            </div>
+            <div class="flags__items">
+                <div class="flags__item">Можно с детьми</div>
+                <div class="flags__item">Можно с детьми</div>
+                <div class="flags__item">Можно с детьми</div>
+            </div>
+            
         </div>
         <div class="modal">
             <div class="modal__popup">
-                <div class="modal__title">
-                    <h2>Стать партнёром проекта</h2>
-                </div>
+                <h2 class="modal__title">Стать партнёром проекта</h2>
                 <form class="modal__form">
-                    <div class="form">
                         <div class="form__firstPath">
-                            <div class="form__info">
-                                <div class="form__info-input">
+                            <div class="form__inputs">
+                                <div class="form__input-custom ">
                                     <div class="form__error"></div>
-                                    <input type="text" id="text" name="text" placeholder="Название организации" required>
+                                    <input type="text" id="text" name="text" placeholder="Название организации" required class="form__info-input">
                                 </div>
-                                <div class="form__info-input">
+                                <div class="form__input-custom">
                                     <div class="form__error"></div>
-                                    <input type="tel" id="tel" name="tel" placeholder="Телефон" required>
+                                    <input type="tel" id="tel" name="tel" placeholder="Телефон" required class="form__info-input">
                                 </div>
-                                <div class="form__info-input">
+                                <div class="form__input-custom">
                                     <div class="form__error"></div>
-                                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                                    <input type="email" id="email" name="email" placeholder="E-mail" required class="form__info-input">
                                 </div>
                             </div>
                             <div class="form__img">
                                 <div class="form__error"></div>
                                 <div class="img1">
                                     <button class="form__img-close" id="close"></button>
-                                    <div class="form__img-input">
-                                        
-                                            <input type="file" id="img" name="photo" accept="jpeg, png" required>
+                                    <div class="form__custom-input">
+                                            <input type="file" id="img" name="photo" accept="jpeg, png" required class="form__img-input">
                                             <label for="photo" class="form__img-castomBtn">Выберите<br> файл</label>
                                     </div>
+                                    <img src="" alt="" id="form__img-preview" class="form__img-preview">
                                 </div>
-                                <img src="" alt="" id="form__img-preview" class="form__img-preview">
+                                
                             </div>     
                         </div>
                         <div class="form__secondPath">
-                            <div class="form__select">
+                            <div class="form__input-custom ">
                                 <div class="form__error"></div>
-                                <select id="select">
-                                    <option class="first-option" value="" selected disabled hidden>Направление</option>
-                                    <option value="Экология">Экология</option>
-                                    <option value="It">It</option>
-                                    <option value="менеджмент">Менеджмент</option>
-                                    <option value="производство">производство</option>
-                                </select>
+                                <input type="text" name="text" placeholder="Направление" required class="form__info-input custom-select" id="select">
+                                <button class="form__btn"><img src='assets/img/down-arrow.svg' alt='arrow' class="form__arrow"></button>
+                                <div class="form__autocomplete">
+                                    <ul class="form__list">
+                                        <li class="form__item">Экология</li>
+                                        <li class="form__item">Менеджмент</li>
+                                        <li class="form__item">IT</li>
+                                        <li class="form__item">Производство</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="form__social">
-                                    <input type="text" name="ru" id="ru" placeholder="avc.ru">
-                                    <input type="text" placeholder="vk.com" name="vk" id="vk">
-                                    <input type="text" placeholder="ok.com" name="ok" id="ok">
-                                    <input type="text" placeholder="facebook.com" name="facebook" id="facebook">
-                                    <input type="text" placeholder="instagram.com" name="instagram" id="instagram">
-                                    <input type="text" placeholder="youtube.com" name="youtube" id="youtube">
-                                    <input type="text" placeholder="Руководитель" id="boss" name="boss">
+                            <input type="text" name="ru" id="ru" placeholder="avc.ru" class="form__social-input form-input">
+                            <input type="text" placeholder="vk.com" name="vk" id="vk" class="form__social-input form-input">
+                            <input type="text" placeholder="ok.com" name="ok" id="ok" class="form__social-input form-input">
+                            <input type="text" placeholder="facebook.com" name="facebook" id="facebook" class="form__social-input form-input">
+                            <input type="text" placeholder="instagram.com" name="instagram" id="instagram" class="form__social-input form-input">
+                            <input type="text" placeholder="youtube.com" name="youtube" id="youtube" class="form__social-input form-input">
+                            <input type="text" placeholder="Руководитель" id="boss" name="boss" class="form__social-input form-input">
+                            <button class="button-main form__button" id="button-yes">Стать партнером проекта</button>
+                            <button class="button-no">Отменить</button>
                         </div>
-                        <div class="form__button">
-                            <div class="form__button-yes">
-                                <button class="button__main" id="button-yes">Стать партнером проекта</button>
-                            </div>
-                            <div class="form__button-no">
-                                <button class="button-no">Отменить</button>
-                            </div>
-                        </div>
-                    </div>
                 </form>
-                <img src="" alt="" id="form__img-preview">
+                
             </div>
-    
         </div>
-    </div>
+    </main>
     <script src="assets/js/index.js"></script>
 </body>
 </html>

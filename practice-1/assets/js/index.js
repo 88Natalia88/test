@@ -1,3 +1,4 @@
+
 //переменные всех инпутов
 let errors = document.querySelectorAll(".form__error");
 const text = document.getElementById('text');
@@ -14,8 +15,30 @@ const boss= document.getElementById('boss');
 const selectForm = document.getElementById('select');
 const btnYes = document.getElementById("button-yes");
 const imgPreview = document.getElementById('form__img-preview');
-const imgInput = document.querySelector('.form__img-input');
+const imgInput = document.querySelector('.form__custom-input');
 const closeBtn = document.getElementById('close');
+const body = document.body;
+const customSelect = document.querySelector('.form__autocomplete');
+const btnSelect = document.querySelector('.form__btn');
+const btnSelectImg = document.querySelector('.form__arrow');
+const items = document.querySelectorAll('.form__item');
+
+//кастомный селект
+btnSelect.addEventListener('click', ()=>{
+    if(customSelect.style.display === 'block'){
+        btnSelectImg.style.transform = 'rotate(0deg)';
+        customSelect.style.display = 'none';
+    } else{   
+        btnSelectImg.style.transform = 'rotate(180deg)';
+        customSelect.style.display = 'block';
+    }
+});
+
+items.forEach((item) =>{
+    item.addEventListener('click', ()=>{
+        selectForm.value = item.textContent;
+    })
+});
 
 //кастомную кнопку "выберите файл" связываем с input type="file"
 document.querySelector(".form__img-castomBtn").addEventListener("click", function(){
@@ -60,13 +83,25 @@ const btnMain = document.getElementById("btn-main");
 
 btnMain.addEventListener("click", function(){
     modal.style.display = 'block';
-    button.style.display = "none";
+    body.classList.toggle('locked');
 });
+
 //закрываем модальное окно
 const btnNo = document.querySelector('.button-no');
 btnNo.addEventListener("click", function(){
+    closeModal();
+});
+
+// Закрытие модального окна при клике вне него
+window.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+
+function closeModal() {
     modal.style.display = "none";
-    button.style.display = "block";
 
     // Очистка полей формы
     text.value = '';
@@ -85,27 +120,29 @@ btnNo.addEventListener("click", function(){
     errors.forEach((error) => {
         error.innerHTML = '';
     });
+
     if(imgPreview){
         imgPreview.src = '';
         imgInput.style.display = "block";
         img.value = '';
         imgPreview.style.display = 'none';
     }
-});
+}
 
 //добавление маскированного ввода телефона
 tel.addEventListener('focus', addMaskNumber);
 
 function addMaskNumber() {
-    tel.placeholder = '+7 (___) ___-__-__';
-
+    //tel.placeholder = '+7 (___) ___-__-__';
+    if (tel.value === '') {
+        tel.value = '+7';
+    }
     tel.addEventListener('input', () => {
         const phone = tel.value.replace(/\D/g, '');
         let formattedPhone = '';
         
-        
         if (phone.length > 0) {
-            formattedPhone += '+' + phone.substring(0, 1) + '(';
+            formattedPhone += '+' + phone.substring(0, 1) + ' ';
         }
     
         if (phone.length > 1) {
@@ -113,7 +150,7 @@ function addMaskNumber() {
         }
 
         if (phone.length > 4) {
-            formattedPhone += ')' + phone.substring(4, 7);
+            formattedPhone += ' ' + phone.substring(4, 7);
         }
 
         if (phone.length > 7) {
@@ -127,12 +164,13 @@ function addMaskNumber() {
     });
 
     tel.addEventListener('keyup', (event) => {
-        const phoneAdd = tel.value;
-        if (phoneAdd === '+7(' && event.key === 'Backspace') {
-            tel.value = '';
+        if (event.key === 'Backspace') {
+            let currentValue = tel.value;
+            tel.value = currentValue.slice(0, -1);
         }
     });
-}
+};
+
 
 //валидация
 
@@ -140,7 +178,7 @@ btnYes.addEventListener("click", submitForm);
 
 
 function submitForm(e){
-
+    console.log('click');
     e.preventDefault();
     //данные введенные в инпутах
     let textAdd = text.value;
@@ -161,37 +199,37 @@ errors.forEach((error, i) => {
     error.innerHTML = '';
 
     if(textAdd === '' && i === 0){
-        error.innerHTML = "* Введите наименование организации";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Название организации";
         formValid = false;
     }
 
     let regTel = /^\+?\d{1,}\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{2}[\s.-]?\d{2}$/; //регулярное выражение для корректного номера телефона
     if(telAdd === '' && i === 1){
-        error.innerHTML = "* Введите номер телефона";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Телефон";
         formValid = false;
     } else if (telAdd !== '' && i === 1 && !regTel.test(telAdd)) {
-        error.innerHTML = "* Введите корректный номер телефона";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Телефон";
         formValid = false;
     }
 
     let regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //регулярное выражение для проверки корректного email
     if(emailAdd === '' && i === 2){
-        error.innerHTML = "* Введите ваш E-mail";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> E-mail";
         formValid = false;
     } else if (emailAdd !== '' && i === 2 && !regEmail.test(emailAdd)){
-        error.innerHTML = "* Введите корректный e-mail";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Введите корректный e-mail";
         formValid = false;
     }
 
     let regPhoto = /\.(jpeg|jpg|png)$/i; //регулярное выражение для проверки формата добавленного фото
     if(imgAdd === '' && i === 3){
-        error.innerHTML = "* Логотип (jpeg, png)";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Логотип (jpeg, png)";
     } else if (imgAdd !== '' && i === 3 && !regPhoto.test(imgAdd)){
-        error.innerHTML = "* Добавьте логотип формата jpeg или png";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Добавьте логотип формата jpeg или png";
     }
 
     if(selectFormAdd === '' && i === 4){
-        error.innerHTML = "* Выберите направление";
+        error.innerHTML = "<span class='form__error-required'>&#8727;</span> Направление";
         formValid = false;
     }
 

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Lato-SemiBold";
+  src: url("./Lato-SemiBold.woff2") format("woff2"),
+    url("./Lato-SemiBold.woff") format("woff"),
+    url("./Lato-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url(".fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("./Montserrat-ExtraBold.woff") format("woff"),
+    url("./Montserrat-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PTSans-Regular";
+  src: url("./PTSans-Regular.woff2") format("woff2"),
+    url("./PTSans-Regular.woff") format("woff"),
+    url("./PTSans-Regular.ttf") format("truetype");
+}
